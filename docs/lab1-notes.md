@@ -6,4 +6,4 @@
 
 ## Capture de GET /api/blueprints/{id}
 
-![Screenshot](docs/images/LAB01-02.png)
+![Screenshot](docs/images/lab01-02.png)
