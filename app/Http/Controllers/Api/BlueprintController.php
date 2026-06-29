@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
 use App\Http\Requests\BlueprintRequest;
+use App\Policies\BlueprintPolicy;
 use App\Http\Resources\BlueprintResource;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,9 +15,7 @@ class BlueprintController extends Controller
 {
     public function index(): AnonymousResourceCollection
     {
-        $blueprints = Blueprint::where('user_id', auth()->id())
-            ->latest()
-            ->paginate(15);
+        $blueprints = auth()->user()->blueprints()->latest()->get();
 
         return BlueprintResource::collection($blueprints);
     }
