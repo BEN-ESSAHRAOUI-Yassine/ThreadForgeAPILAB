@@ -10,10 +10,9 @@ return [
     | Here you may specify which of the AI providers below should be the
     | default for AI operations when no explicit provider is provided
     | for the operation. This should be any provider defined below.
-    |
-    */
+    |*/
 
-    'default' => 'openai',
+    'default' => env('AI_DEFAULT', 'openai'),
     'default_for_images' => 'gemini',
     'default_for_audio' => 'openai',
     'default_for_transcription' => 'openai',
