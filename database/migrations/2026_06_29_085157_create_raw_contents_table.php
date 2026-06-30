@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('blueprint_id')->constrained()->cascadeOnDelete();
             $table->string('title');
             $table->longText('contenu_brut');
-            $table->string('statut')->default('pending');
+            $table->string('statut')->default('en_attente');
             $table->timestamps();
         });
     }

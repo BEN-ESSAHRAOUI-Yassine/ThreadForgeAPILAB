@@ -4,8 +4,8 @@ namespace App\Enums;
 
 enum RawContentStatus: string
 {
-    case Pending = 'pending';
-    case Processing = 'processing';
-    case Completed = 'completed';
-    case Failed = 'failed';
+    case Pending = 'en_attente';
+    case Processing = 'en_traitement';
+    case Completed = 'traite';
+    case Failed = 'echoue';
 }

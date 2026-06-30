@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Requests\BlueprintRequest;
 use App\Policies\BlueprintPolicy;
 use App\Http\Resources\BlueprintResource;
+use App\Services\BlueprintService;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Blueprint;
@@ -54,5 +55,16 @@ class BlueprintController extends Controller
         $blueprint->delete();
 
         return response()->json(null, 204);
+    }
+
+    public function duplicate(Blueprint $blueprint, BlueprintService $service): JsonResponse
+    {
+        $this->authorize('update', $blueprint);
+
+        $clone = $service->duplicate($blueprint, auth()->id());
+
+        return BlueprintResource::make($clone)
+            ->response()
+            ->setStatusCode(201);
     }
 }
