@@ -1,9 +1,9 @@
 # LAB3 Notes
 
-## Capture de la table jobs avec un Job en attente (avant worker)
+## Capture du generated_post en base avec body_points en tableau
 
 ![Screenshot](docs/images/lab03-01.png)
 
-## Capture montrant le statut passé à traite (après worker)
+## Le temps de réponse observé dans Postman
 
 ![Screenshot](docs/images/lab03-02.png)
